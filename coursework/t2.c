@@ -17,9 +17,7 @@ int main(){
     /*char *tok1[sizeof(line)];
     char *tok2[sizeof(line)];
     char *tok3[sizeof(line)];*/ 
-    char *date;
-    char *time;
-    char *steps;
+
 
 
     FILE *rec = fopen("records.csv","r");
