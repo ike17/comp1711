@@ -15,6 +15,7 @@ typedef struct {
 
 void tokeniseRecord(const char *input, const char *delimiter,
                     char *date, char *time, char *steps) {
+
     // Create a copy of the input string as strtok modifies the string
     char *inputCopy = strdup(input);
     
@@ -56,18 +57,18 @@ int main(){
 
     while(fgets(line, sizeof(line),fitness)){
     
-        tokeniseRecord(line,",", data_date , data_time, data_steps);
-        strcpy(data[ctr].date , data_date);
+        tokeniseRecord(line,",", data[ctr].date , data[ctr].time, data[ctr].steps);
+        /*strcpy(data[ctr].date , data_date);
         strcpy(data[ctr].time , data_time);
-        strcpy(data[ctr].steps , data_steps);
+        strcpy(data[ctr].steps , data_steps);*/
         ctr++;
                 
     }
 
-    //printf("%s\n", data[0].date);
+    printf("%s\n", data[0].date);
     printf("%s\n", data[0].time);
-    //printf("%s\n", data[0].steps);
-    //printf("Number of records in file: %d\n", ctr);
+    printf("%s\n", data[0].steps);
+    printf("Number of records in file: %d\n", ctr);
     fclose(fitness);
     return 0;
 
